@@ -42,44 +42,79 @@
             position: sticky;
          }
 
-        #form-login {
+        #form-saida {
             margin-left: 0%;
         }
 
-        #form-login .form-group {
+        #form-saida .form-group {
             margin-top: 20px;
         }
 
-        #form-login .form-group input {
+        #form-saida .form-group input {
             height: 30px;
             background-color: rgba(255, 255, 255, 0.37);
             color: black;
             font-size: 15px;
         }
 
-        #form-login .form-group .btn-login {
+        #form-saida .form-group .btn-login {
             margin: 0%;
 
         
         }
     </style>
+    <script>
+
+        function enviaMsg() {
+          const xhttp = new XMLHttpRequest();
+        
+          xhttp.onreadystatechange = function() {
+            console.log("readyState:" + this.readyState);
+            console.log("status:" + this.status);
+        
+            if (this.readyState == 4 && this.status == 200) {
+              imprimeResposta(this);
+            }
+          };
+        
+          xhttp.onload = function() {
+            document.getElementById("resposta").innerHTML = this.responseText;
+          };
+        
+          document.getElementById("saida").innerHTML = "mensagem enviada";
+          var data = {
+          "bid":document.getElementById("bid").value,
+          "from":document.getElementById("from").value};
+          var jsondata = JSON.stringify(data);
+          var url = " https://8lh0gvdzrg.execute-api.us-east-1.amazonaws.com/TesteInicial";
+          xhttp.open("POST", url);
+          xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+          xhttp.send(jsondata);
+        }
+        
+        function imprimeResposta(xml) {
+          var xmlDoc = xml.responseXML;
+          document.getElementById("resposta").innerHTML = xmlDoc;
+        }
+        </script>
+        
+        <p id="saida">Envia ao pressionar o botão</p>
+        <br><br>
+        <table>
+            <tr>
+            <td><LABEL for="from">Usuario:</LABEL>
+            <td><INPUT Type = "Text" id="from" Name="from" Size="20" MaxLength="50"><BR></INPUT>
+            <tr>
+            <td><LABEL for="bid">Lance:</LABEL>
+            <td><INPUT Type = "Text" id="bid" Name="bid" Size="20" MaxLength="50"><BR></INPUT>
+        </table>
+        
+        <button type="button" onclick="enviaMsg()">Envia</button>
+        
+        <br><br><br>
+        Resposta:
+        <br>
+        <span id="resposta">---------</span>
     </main>
-    <form id="form-login" class="form-horizontal" method="POST">
-        <div class="form-group">
-            <label for="deslogin" class="col-sm-2 control-label">LOGIN</label>
-            <div class="col-sm-7 col-md-4">
-                <input type="text" class="form-control" id="deslogin" placeholder="Digite seu usuário">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="dessenhalogin" class="col-sm-2 control-label">SENHA</label>
-            <div class="col-sm-7 col-md-4">
-                <input type="password" class="form-control" id="dessenhalogi" placeholder="Digite sua senha">
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-sm-offset-2 col-md-offset-2">
-            <button type="submit" class="btn btn-login">FAZER LOGIN</button>
-        </div>
-    </form>
 </body>
 </html>
