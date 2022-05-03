@@ -8,20 +8,239 @@
   <title>Leilões Online</title>
 </head>
 <body>
+  <style>
+    {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .center {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    header {
+      background-color: white;
+      padding: 20px 0;
+      border-bottom: 2px solid rgb(200, 200, 200)
+    }
+    
+    
+    .logo {
+      color: #007bff;
+    }
+    
+    .logo h1 {
+      font-weight: bold;
+      font-size: 26px;
+    }
+    
+    .menu {
+      text-align: right;
+      width: 85%;
+    }
+    
+    .menu a {
+      color: #124265;
+      font-size: 14px;
+      text-decoration: none;
+      margin-right: 10px;
+      transition-property: font-size;
+      transition: 0.5s;
+    }
+    
+    .logo h3 {
+      font-weight: bold;
+      font-size: 26px;
+    
+    }
+    .menu a:hover {
+      font-size: 18px;
+      color: #007bff;
+    }
+    
+    .menu .btn-1 {
+      color: white;
+      background-color: #007bff;
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 6px;
+    }
+    .menu .btn-1:hover {
+      background-color: #124265;
+      color: #007bff;
+    }
+    
+    /*container*/
+    .container {
+      position: relative;
+    }
+    
+    .container:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 95vh;
+      filter: brightness(75%);
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    
+    .container-a {
+      z-index: 10;
+      position: relative;
+      width: 100%;
+      text-align: center;
+      margin: 60px 0;
+    }
+    
+    .container-a h2 {
+      font-weight: bold;
+      color: black(27, 27, 27);
+      font-size: 40px;
+    }
+    
+    .container-a p {
+      color: rgb(34, 7, 97);
+      font-size: 40px;
+      margin: 10px 0;
+    
+    }
+    
+    .container-a button {
+      color: #007bff;
+      background-color: white;
+      display: inline-block;
+      padding: 10px 30px;
+      border-radius: 6px;
+      border: 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .container-a button:hover {
+      background-color: #007bff;
+      color: white;
+      transition: 0.5s;
+    }
+    
+    .status-baixo {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .status {
+      border-radius: 10px;
+      background-color: white;
+      width: 22.5%;
+      margin-right: 2.5%;
+      padding: 50px 20px;
+      transition: all 0.3s;
+      transition: 0.3s;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .status:hover {
+      transform: scale (1.1);
+      transform: scale(1.1);
+      transform: scale(1.1);
+    
+    }
+    
+    .status i {
+      margin: 0 75px;;
+      color: #124265;
+      font-size: 35px;
+    }
+    
+    .status h2 {
+      color: #007bff;
+      margin: 10px 0;
+      font-size: 17px;
+    }
+    
+    .status p {
+      color: #007bff;
+      font-size: 13px;
+      line-height: 20px;
+    }
+    
+    @media screen and (max-width: 760px) {
+      .status { width: 100%; 
+      margin-bottom: 12px; }  
+    }
+    
+    /* Sobre */
+    div.sobre {
+      padding: 80px 0;
+    }
+    .sobre-a {
+      text-align: left;
+      width: 100%;
+    }
+    
+    .sobre h2 {
+      margin: 20px;
+      color: #124265;
+      text-transform: uppercase;
+    }
+    
+    .sobre p {
+      color: #007bff;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    
+    .sobre-b {
+      display: flex;
+    }
+    
+    .sobre-b p {
+      display: flex;
+      text-align: left;
+      margin: 0 20px;
+    }
+    
+    .redes-sociais {
+      text-align: right;
+      width: 95%;
+    }
+    
+    .redes-sociais p {
+      color: #124265;
+      font-weight: bold;
+    }
+    
+    .redes-sociais i {
+      color: #007bff;
+      font-size: 20px;
+      border-left: 15px;
+    }
+  </style>
   <header>
     <div class="center">
       <div class="logo">
         <h1>Leilões Online!!</h1>
       </div><!--Logo-->
       <div class="menu">
-        <a href="index.html">Página inicial</a> 
+        <a href="index.html">Logout</a> 
       </div><!--Menu-->
     </div><!--Center-->
   </header>
   <div class="container">    
     <div class="center">
       <div class="container-a">
-        <p>Bem vindo a área do usuário!!</p>
+        <p>Bem vindo(a) a área do usuário!!</p>
       </div><!--Container-a-->
       <div class="status-baixo">
         <div class="status">
@@ -31,7 +250,8 @@
         </div><!--Status-->
         <div class="status">
           <i class="fas fa-user-edit"></i>
-          <h2>Leilões Online</h2>
+          <h2>Leilões ao vivo</h2>
+          <a href="leiloes_online.html">Confira os leilões ao vivo</a>
           <p>Confira os leilões que estão acontecendo ao vivo neste momento.</p>
         </div><!--Status-->
         <div class="status">
@@ -41,8 +261,6 @@
         </div><!--Status-->
         <div class="status">
           <i class="fas fa-brain"></i>
-          <h2>Logout</h2>
-          <p>Voltar para Home.</p>
         </div><!--Status-->
       </div><!--Status-baixo-->
     </div><!--Center-->

@@ -8,6 +8,131 @@
   <title>Leilões Online</title>
 </head>
 <body>
+  <style>
+  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .center {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  header {
+    background-color: white;
+    padding: 20px 0;
+    border-bottom: 2px solid rgb(200, 200, 200)
+  }
+  
+  
+  .logo {
+    color: #007bff;
+  }
+  
+  .logo h1 {
+    font-weight: bold;
+    font-size: 26px;
+  }
+  
+  .menu {
+    text-align: right;
+    width: 85%;
+  }
+  
+  .menu a {
+    color: #124265;
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition-property: font-size;
+    transition: 0.5s;
+  }
+
+  /*container*/
+  .container {
+    position: relative;
+  }
+  
+  .container:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 95vh;
+    filter: brightness(75%);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-attachment: fixed;
+  }
+    
+  .container-a p {
+    color: rgb(34, 7, 97);
+    font-size: 40px;
+    margin: 10px 0;
+  }
+
+  .status-baixo {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .status {
+    border-radius: 12px;
+    background-color: rgb(243, 242, 242);
+    width: 22.5%;
+    margin-right: 2.5%;
+    padding: 50px 20px;
+    transition: all 1.3s;
+    cursor: pointer;
+  }
+
+  .status h2 {
+    color: #007bff;
+    margin: 10px 0;
+    font-size: 17px;
+  }
+  
+  .status p {
+    color: #007bff;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  
+  /* Sobre */
+  .sobre-a {
+    text-align: left;
+    width: 100%;
+  }
+  
+  .sobre h2 {
+    margin: 20px;
+    color: rgb(34, 7, 97);
+    text-transform: uppercase;
+  }
+  
+  .sobre p {
+    color: #007bff;
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  
+  .sobre-b {
+    display: grid;
+  }
+  
+  .sobre-b p {
+    display: flex;
+    text-align: left;
+    margin: 0 20px;
+  }
+</style>
   <header>
     <div class="center">
       <div class="logo">
@@ -17,7 +142,6 @@
         <a href="index.html">Página inicial</a> 
         <a href="login.html">Login</a>
         <a href="sobre_nos.html">Sobre Nós</a>
-        <a class="btn-1" href="#">Contato</a>
       </div><!--Menu-->
     </div><!--Center-->
   </header>
@@ -60,13 +184,6 @@
         <p>A Leilões online é uma empresa que realiza leilões online disponível em 20 estados do Brasil e em mais de 150 cidades. Empresa no mercado de leilões desde os anos 2000, sempre atualizando seu portfólio de acordo com as tendências.</p>
         <p>Ganhadora 3 vezes consecutivas do prêmio reclame aqui, possui um extenso legado em vendas online, pois tem como foco a mellhor experiência para o usuário.</p>
       </div>
-      <div class="redes-sociais">
-        <p>Siga-nos:</p>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div><!--Redes-sociais-->
     </div><!--Center-->
   </div><!--Sobre-->
   <script src="https://kit.fontawesome.com/7953b7a09e.js" crossorigin="anonymous"></script>
